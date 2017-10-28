@@ -11,6 +11,12 @@ import java.time.Duration
 import java.time.LocalDateTime
 import java.time.LocalTime
 
+// Class representing a time interval, or "Time Slot", along with a view.
+
+// View is just represented by a region with minimum size, and style class.
+
+// Has a selected property just to represent selection.
+
 class TimeSlot {
 
 
@@ -68,7 +74,7 @@ class TimeSlot {
 
 
         selectedProperty().addListener({obs, wasSelected, isSelected ->
-                view.pseudoClassStateChanged(CalendarView.SELECTED_PSEUDO_CLASS, isSelected)
+                view.pseudoClassStateChanged(calendar.CalendarView.SELECTED_PSEUDO_CLASS, isSelected)
         } as ChangeListener)
 
 

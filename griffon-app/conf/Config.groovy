@@ -1,6 +1,6 @@
 application {
     title = 'hack-nott'
-    startupGroups = ['hackNott']
+    startupGroups = ['CalendarView']
     autoShutdown = true
 }
 mvcGroups {
@@ -9,5 +9,10 @@ mvcGroups {
         model      = 'org.example.HackNottModel'
         view       = 'org.example.HackNottView'
         controller = 'org.example.HackNottController'
+    }
+    'CalendarView' {
+        model      = 'calendar.CalendarModel'
+        view       = 'calendar.CalendarView'
+        controller = 'calendar.CalendarController'
     }
 }

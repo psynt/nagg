@@ -1,20 +1,40 @@
-task {
+Task {
   name :: String
   deadline :: Date
   workhours :: Float
   lock :: Bool
   parts :: [TimeBlocks]
   tags :: [String]
-  addinfo :: Strng
+  addinfo :: String
+  daysTilDeadline()
 }
 
-commitment {
+Commitment {
   name :: String
   start :: Date
   duration :: Float
 }
 
+Commitments {
+  commitments :: [Commitment]
+  makeCal() :: Cal
+}
+
 TimeBlock {
   start :: Date
   duration :: Float
+}
+
+Day {
+  date :: Date
+  parts :: [TimeBlocks]
+  isFull() :: Bool
+  nextStartPoint() :: Date
+  
+}
+
+Cal {
+  days :: [Day]
+  take(numOfDays) :: [Day]
+
 }

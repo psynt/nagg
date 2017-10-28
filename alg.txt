@@ -1,0 +1,15 @@
+Sort tasks by least duration
+For each task
+  Sort weeks by least business
+  for each week
+    Allocate Hours
+For each week
+  Sort days by least business
+  Allocate Hours
+Assign work hours
+*************************
+
+Sort tasks ascending by task.deadline
+timeframe = take floor(task.daysTilDeadline) from days
+
+

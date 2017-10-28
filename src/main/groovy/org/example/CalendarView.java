@@ -1,23 +1,22 @@
 package org.example;
 
 import javafx.application.Application;
-import javafx.beans.property.BooleanProperty;
 import javafx.beans.property.ObjectProperty;
-import javafx.beans.property.SimpleBooleanProperty;
 import javafx.beans.property.SimpleObjectProperty;
 import javafx.css.PseudoClass;
 import javafx.geometry.HPos;
 import javafx.geometry.Insets;
-import javafx.scene.Node;
 import javafx.scene.Scene;
 import javafx.scene.control.Label;
 import javafx.scene.control.ScrollPane;
 import javafx.scene.layout.GridPane;
-import javafx.scene.layout.Region;
 import javafx.scene.text.TextAlignment;
 import javafx.stage.Stage;
 
-import java.time.*;
+import java.time.Duration;
+import java.time.LocalDate;
+import java.time.LocalDateTime;
+import java.time.LocalTime;
 import java.time.format.DateTimeFormatter;
 import java.util.ArrayList;
 import java.util.List;
@@ -30,7 +29,7 @@ public class CalendarView extends Application {
 
     private final LocalTime firstSlotStart = LocalTime.of(0, 0);
 
-    private final Duration slotLength = Duration.ofMinutes(15);
+    private final Duration slotLength = Duration.ofMinutes(30);
 
     private final LocalTime lastSlotStart = LocalTime.of(23, 59);
 
@@ -154,7 +153,7 @@ public class CalendarView extends Application {
 
         Scene scene = new Scene(scroller);
 
-        scene.getStylesheets().add(getClass().getResource("calendar-view.css").toExternalForm());
+//        scene.getStylesheets().add(getClass().getResource("").toExternalForm());
 
         primaryStage.setScene(scene);
 
@@ -260,105 +259,6 @@ public class CalendarView extends Application {
 
 
 
-    public static class TimeSlot {
 
-
-
-        private final LocalDateTime start ;
-
-        private final Duration duration ;
-
-        private final Region view ;
-
-
-
-        private final BooleanProperty selected = new SimpleBooleanProperty();
-
-
-
-        public final BooleanProperty selectedProperty() {
-
-            return selected ;
-
-        }
-
-
-
-        public final boolean isSelected() {
-
-            return selectedProperty().get();
-
-        }
-
-
-
-        public final void setSelected(boolean selected) {
-
-            selectedProperty().set(selected);
-
-        }
-
-
-
-        public TimeSlot(LocalDateTime start, Duration duration) {
-
-            this.start = start ;
-
-            this.duration = duration ;
-
-
-
-            view = new Region();
-
-            view.setMinSize(80, 20);
-
-            view.getStyleClass().add("time-slot");
-
-
-
-            selectedProperty().addListener((obs, wasSelected, isSelected) ->
-
-                    view.pseudoClassStateChanged(SELECTED_PSEUDO_CLASS, isSelected));
-
-
-        }
-
-
-
-        public LocalDateTime getStart() {
-
-            return start ;
-
-        }
-
-
-
-        public LocalTime getTime() {
-
-            return start.toLocalTime() ;
-
-        }
-
-
-
-        public DayOfWeek getDayOfWeek() {
-
-            return start.getDayOfWeek() ;
-
-        }
-
-
-
-        public Duration getDuration() {
-
-            return duration ;
-        }
-
-
-
-        public Node getView() {
-            return view;
-        }
-    }
 
 }

@@ -27,7 +27,6 @@ class CalendarView {
     void initUI(){
         def timeSlots = model.timeSlots
         GridPane calendarView = new GridPane();
-//        ObjectProperty<TimeSlot> mouseAnchor = new SimpleObjectProperty<>();
         LocalDate today = LocalDate.now();
         LocalDate startOfWeek = today.minusDays(today.getDayOfWeek().getValue() - 1) ;
         LocalDate endOfWeek = startOfWeek.plusDays(6);
@@ -65,13 +64,16 @@ class CalendarView {
             slotIndex++ ;
         }
 
+        def scene = new Scene(new ScrollPane(calendarView))
+
+        scene.getStylesheets().add(application.resourceHandler.getResourceAsURL('TimeSlot.css').toExternalForm())
 
         Stage stage = (Stage) getApplication()
             .createApplicationContainer(Collections.<String, Object>emptyMap());
         stage.setTitle(getApplication().getConfiguration().getAsString("application.title"));
         stage.setWidth(480);
         stage.setHeight(320);
-        stage.setScene(new Scene(new ScrollPane(calendarView)));
+        stage.setScene(scene);
         getApplication().getWindowManager().attach("mainWindow", stage);
     }
 }

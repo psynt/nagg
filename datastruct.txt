@@ -13,3 +13,8 @@ commitment {
   start :: Date
   duration :: Float
 }
+
+TimeBlock {
+  start :: Date
+  duration :: Float
+}

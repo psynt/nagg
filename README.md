@@ -2,6 +2,7 @@
 
 ## Hello world
 
+
 Simply add your source files to `src/main/groovy`, your test cases to
 `src/test/groovy` and then you will be able to build your project with
 

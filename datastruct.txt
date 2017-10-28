@@ -1,0 +1,15 @@
+task {
+  name :: String
+  deadline :: Date
+  workhours :: Float
+  lock :: Bool
+  parts :: [TimeBlocks]
+  tags :: [String]
+  addinfo :: Strng
+}
+
+commitment {
+  name :: String
+  start :: Date
+  duration :: Float
+}

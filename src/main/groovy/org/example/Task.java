@@ -7,7 +7,7 @@ public class Task {
     private Date deadline;
     private float workhours;
     private boolean lock;
-    private TimeBlocks[] parts;
+    private TimeBlock[] parts;
     private String[] tags;
     private String addInfo;
 }

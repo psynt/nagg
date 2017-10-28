@@ -66,7 +66,7 @@ class CalendarView {
 
         def scene = new Scene(new ScrollPane(calendarView))
 
-        scene.getStylesheets().add(application.resourceHandler.getResourceAsURL('TimeSlot.css').toExternalForm())
+        scene.getStylesheets().add(application.resourceHandler.getResourceAsURL('/TimeSlot.css').toExternalForm())
 
         Stage stage = (Stage) getApplication()
             .createApplicationContainer(Collections.<String, Object>emptyMap());
